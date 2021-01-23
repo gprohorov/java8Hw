@@ -6,16 +6,18 @@ import java.util.stream.Stream;
 public class Main {
 
     public static int[] swap(int[] array){
-        int[] buffer = new int[array.length];
+         int buffer = 100;
 
         for (int i = 0; i <array.length ; i++) {
+
             if(i%2 == 0){
-                buffer[i] = array[i+1];
+                buffer = array[i];
+                array[i] = array[i+1];
             } else{
-                buffer[i] = array[i-1];
+                array[i] = buffer;
             }
         }
-        return buffer;
+        return array;
     }
 
     public static void main(String[] args) {
